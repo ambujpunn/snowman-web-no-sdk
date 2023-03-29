@@ -24,6 +24,17 @@
         }
       };
 
+      // Track an event using Branch
+      var custom_data = {
+        "name": snowmanObj.name
+      }
+
+      branch.logEvent(
+        "snowman-saved",
+        custom_data,
+        function(err) { console.log(err) }
+      )
+
       branch.link(linkData, function(err, link) {
         console.log(link);
 
